@@ -17,3 +17,14 @@ def diag_matrice_croissant(X):
     P_decroissant = P[:, indices_tri]
     Sigma=np.diag(Sigma_decroissant)
     return Sigma,P_decroissant
+
+def frobenius_scalar_product(A, B):
+    return np.trace(A@ B.T)
+
+def Phi_operator(X, A):
+    n = A.shape[1]  # Nombre de colonnes dans A
+    L = np.zeros(n)
+    for i in range(n):
+        Ai = A[:, i:i+1]  # Sélectionner la colonne i de A
+        L[i] = frobenius_scalar_product(X, Ai@Ai.T)
+    return L
