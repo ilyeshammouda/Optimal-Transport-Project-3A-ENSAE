@@ -27,4 +27,4 @@ def Phi_operator(X, A):
     for i in range(n):
         Ai = A[:, i:i+1]  # Sélectionner la colonne i de A
         L[i] = frobenius_scalar_product(X, Ai@Ai.T)
-    return L
+    return L.reshape(-1, 1)
