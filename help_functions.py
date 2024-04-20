@@ -11,12 +11,11 @@ def diag_matrice_croissant(X):
     des vecteurs propres associée.
     '''
     # On trie les valeurs propres dans l'ordre croissant
-    sigma,P=np.linalg.eig(X)
-    indices_tri = np.argsort(sigma)[::-1]
-    Sigma_decroissant = sigma[indices_tri]
-    P_decroissant = P[:, indices_tri]
+    sigma, P = np.linalg.eigh(X)
+    Sigma_decroissant = sigma[::-1]
+    P_decroissant = P[:, ::-1]
     Sigma=np.diag(Sigma_decroissant)
-    return Sigma,P_decroissant
+    return Sigma, P_decroissant
 
 def frobenius_scalar_product(A, B):
     return np.trace(A@ B.T)
