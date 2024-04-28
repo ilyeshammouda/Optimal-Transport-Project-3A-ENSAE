@@ -60,4 +60,15 @@ def Operateur_T(P,sigma,S,mu,epsilon):
     G=P_positifs@(1/(2*mu)*(U@P_positifs)@P_positifs.T + epsilon*(U@P_positifs)@P_positifs.T)
     return G+G.T
 
+
+def moving_average(data, window_size):
+    smoothed_data = []
+    for i in range(len(data)):
+        if i < window_size // 2:
+            smoothed_data.append(sum(x[1] for x in data[:i+window_size//2+1]) / (i + window_size//2 + 1))
+        elif i >= len(data) - window_size // 2:
+            smoothed_data.append(sum(x[1] for x in data[i-window_size//2:]) / (len(data) - i + window_size//2))
+        else:
+            smoothed_data.append(sum(x[1] for x in data[i-window_size//2:i+window_size//2+1]) / window_size)
+    return [(data[i][0], smoothed_data[i]) for i in range(len(data))]
     
