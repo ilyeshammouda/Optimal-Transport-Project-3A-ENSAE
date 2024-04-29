@@ -72,3 +72,68 @@ def moving_average(data, window_size):
             smoothed_data.append(sum(x[1] for x in data[i-window_size//2:i+window_size//2+1]) / window_size)
     return [(data[i][0], smoothed_data[i]) for i in range(len(data))]
     
+
+def kernel_cost(gamma, data, reg):
+
+    KX2 = data['KX2']
+    KY2 = data['KY2']
+    KX3 = data['KX3']
+    KY3 = data['KY3']
+
+    tmp1 = np.mean(KX3) + np.mean(KY3)
+    tmp2 = (np.mean(KX2, axis=0) + np.mean(KY2, axis=0)) @ gamma
+    c = (tmp1 - tmp2) / (2 * reg)
+
+    return c
+
+
+def gradient(gamma, X, Phi, Q, z, reg1, reg2):
+    """
+    Compute the gradient of the objective function.
+
+    Args:
+        gamma (np.ndarray): m*1 vector.
+        X (np.ndarray): m*m matrix.
+        Phi (np.ndarray): m*m matrix.
+        Q (np.ndarray): m*m matrix.
+        z (np.ndarray): m*1 vector.
+        reg1 (float): Regularization parameter.
+        reg2 (float): Regularization parameter.
+
+    Returns:
+        g_gamma (np.ndarray): m*1 vector.
+        g_X (np.ndarray): m*m matrix.
+    """
+    m = len(z)
+    H = Phi.T @ X @ Phi
+    g_gamma = (Q @ gamma - z) / (2 * reg2) - np.diag(H)
+    g_X = Phi @ np.diag(gamma) @ Phi.T + reg1 * np.eye(m)
+    return g_gamma, g_X
+
+
+def residue(gamma, X, Phi, Q, z, reg1, reg2):
+    """
+    Compute the residue of the objective function.
+
+    Args:
+        gamma (np.ndarray): m*1 vector.
+        X (np.ndarray): m*m matrix.
+        Phi (np.ndarray): m*m matrix.
+        Q (np.ndarray): m*m matrix.
+        z (np.ndarray): m*1 vector.
+        reg1 (float): Regularization parameter.
+        reg2 (float): Regularization parameter.
+
+    Returns:
+        r_gamma (np.ndarray): m*1 vector.
+        r_X (np.ndarray): m*m matrix.
+    """
+    # Compute the gradient
+    g_gamma, g_X = gradient(gamma, X, Phi, Q, z, reg1, reg2)  
+    X_new = X - g_X
+    V, D = np.linalg.eigh(X_new)
+    X_new = V @ np.maximum(D, 0) @ V.T
+    r_X = X - X_new
+    
+    return g_gamma, r_X
+
