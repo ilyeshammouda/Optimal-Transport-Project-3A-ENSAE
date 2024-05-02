@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ##  Code description <a name = "Codedescription"></a>
 
-The main code of this project is orginized in two notebooks. The first one, 
+The main code of this project is organized in two notebooks. The first one, 'python_numpy_implementation.ipynb', contains our implementation of the algorithm using classical techniques, for instance, numpy. While the second one, 'python_jax_implementation.ipynb', contains a way of implementing the same algorithm using JAX. In the file    you can find an implementation of kernel-based calculations for optimal transport, offering functionality for computing kernel matrices, distance matrices, and estimating transport costs. It supports both Sobolev and Gaussian kernels and provides methods for constructing kernels from samples and estimating optimal transport costs in one-dimensional settings. Overall, it serves as a toolkit for analyzing and solving optimal transport problems using kernel methods.
 
 
 
