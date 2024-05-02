@@ -4,7 +4,8 @@
  <img width=200px height=200px src="ENSAE.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Transferable Adversarial Poisoning of Deep Neural Network Classifiers Using Surrogate Backbones</h3>
+<h3 align="center">A Specialized Semismooth Newton Method for Kernel-Based
+Optimal Transport</h3>
 
 <div align="center">
 
@@ -16,7 +17,10 @@
 ---
 
 <p align="center"> 
-In this project, we present an adversarial approach designed to compromise the effectiveness of a deep neural network classifier. Our method entails utilizing surrogate backbones as substitutes for the target network to be compromised.
+This project describes an implementation of semismooth Newton (SSN) method for kernel-based optimal transport (OT).The aim of this project is to
+implement a Specialized Semismooth Newton Method (SSN) for Kernel-Based Optimal Transport,
+which was introduced by Lin et al. [2024]. After initially implementing the algorithm primarily using numpy, we attempted to re-implement
+it in JAX.
     <br> 
 </p>
 
