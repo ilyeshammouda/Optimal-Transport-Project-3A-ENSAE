@@ -22,7 +22,8 @@ Optimal Transport</h3>
 
 - [About](#about)
 - [Installing](#Installing)
-- [Code description](#Code description)
+- [Code description](#Codedescription)
+
 
 ##  About <a name = "about"></a>
 This project describes an implementation of semismooth Newton (SSN) method for kernel-based optimal transport (OT).The aim of this project is to
@@ -44,7 +45,7 @@ pip install -r requirements.txt
 
 
 
-##  Code description <a name = "Code description"></a>
+##  Code description <a name = "Codedescription"></a>
 
 The main code of this project is orginized in two notebooks. The first one, 
 
