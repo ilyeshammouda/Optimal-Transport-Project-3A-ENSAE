@@ -57,16 +57,10 @@ The main code of this project is organized in two notebooks. The first one, 'pyt
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@Valentin](https://github.com/Tordjx) 
-- [@Ambre](https://github.com/ambree14) 
+- [@Franki](https://github.com/NGUIMATSIA) 
 - [@Ilyes](https://github.com/ilyeshammouda) 
 
 
 
 ## References <a name = "References"></a>
-- C.Zhu,W.R.Huang,A.Shafahi,H.Li,G.Taylor,C.Studer,T.Goldstein. [Transferable Clean-Label Poisoning Attacks on Deep Neural Nets](https://doi.org/10.48550/arXiv.1905.05897): [arXiv:1905.05897v2](https://doi.org/10.48550/arXiv.1905.05897)
-- K.He, X.Zhang,S.Ren,J.Sun. [Deep Residual Learning for Image Recognition](https://doi.org/10.48550/arXiv.1512.03385): [	arXiv:1512.03385 ](
-https://doi.org/10.48550/arXiv.1512.03385)
-- Z.Zhou, M.R.Siddiquee,N.Tajbakhsh, J.Liang. [UNet++: A Nested U-Net Architecture for Medical Image Segmentation](https://doi.org/10.48550/arXiv.1807.10165): [arXiv:1807.10165v1 ](
-https://doi.org/10.48550/arXiv.1807.10165
-)
+- Tianyi Lin and Marco Cuturi and Michael I. Jordan [A Specialized Semismooth Newton Method for Kernel-Based Optimal Transport]
