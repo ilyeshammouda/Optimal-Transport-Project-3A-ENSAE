@@ -16,18 +16,11 @@ Optimal Transport</h3>
 
 ---
 
-<p align="center"> 
-This project describes an implementation of semismooth Newton (SSN) method for kernel-based optimal transport (OT).The aim of this project is to
-implement a Specialized Semismooth Newton Method (SSN) for Kernel-Based Optimal Transport,
-which was introduced by Lin et al. [2024]. After initially implementing the algorithm primarily using numpy, we attempted to re-implement
-it in JAX.
-    <br> 
-</p>
+
 
 ## 📝 Table of Contents
 
 - [About](#about)
-- [Prerequisites](#getting_started)
 - [Installing](#Installing)
 - [Results](#Results)
 - [Conclusion](#Conclusion)
@@ -35,19 +28,12 @@ it in JAX.
 - [References](#References)
 
 ##  About <a name = "about"></a>
-As mentioned earlier, our project's primary objective is to explore an adversarial technique with the purpose of diminishing the accuracy of a deep neural network classifier. This involves utilizing surrogate backbones as replacements for the undisclosed model targeted for poisoning. We assess transferability to alternative backbones and evaluate our methodology's performance in both white-box and black-box settings.
+This project describes an implementation of semismooth Newton (SSN) method for kernel-based optimal transport (OT).The aim of this project is to
+implement a Specialized Semismooth Newton Method (SSN) for Kernel-Based Optimal Transport,
+which was introduced by Lin et al. [2024]. After initially implementing the algorithm primarily using numpy, we attempted to re-implement
+it in JAX.
 
-Our venture into this field was sparked by the paper titled [Transferable Clean-Label Poisoning Attacks on Deep Neural Nets]((https://doi.org/10.48550/arXiv.1905.05897)), published in 2019. An implementation of their approach can be found in the [Convex Polytope Attack](convex_polytope_attack/Convex_polytope_Attack.py) folder.
 
-To set up and run the project on your local machine for development and testing purposes, follow these instructions. Refer to [deployment](#deployment) for guidance on deploying the project on a live system.
-
-## Prerequisites <a name = "getting_started"></a>
-
-The necessary installations to replicate our experiments, along with their installation instructions, are outlined below. Please note that running this code on macOS may not be possible due to our use of Nvidia CUDA tools.
-
-Additionally, you will need to download the image database from [The German Traffic Sign Recognition Benchmark database](https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/published-archive.html). Specifically, download the following datasets: GTSRB_Final_Test_GT.zip, GTSRB_Final_Test_Images.zip, GTSRB_Final_Training_Images.zip.
-
-Unzip these datasets in a directory to replicate our experiments. The selection of this dataset is primarily motivated by the intentional design of traffic signs to be easily distinguishable from one another, making it a challenging task to create poisons from this dataset.
 
 
 ## Installing <a name = "Installing"></a>
